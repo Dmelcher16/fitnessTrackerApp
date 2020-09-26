@@ -13,8 +13,8 @@ app.post("/workouts", async function(req, res){
         res.json(await db.Workout.create(req.body));
 })
 
-app.put("/workouts/:id", function(req, res){
-        res.send(db.Workout.findByIdAndUpdate(req.params.id, {
+app.put("/workouts/:id", async function(req, res){
+        res.send(await db.Workout.findByIdAndUpdate(req.params.id, {
              $push: {exercises: req.body}, 
             })
         );
