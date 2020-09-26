@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // register routes
-app.use(require("./routes"));
+app.use(require("./routes/routes"));
 
 // server listening
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
